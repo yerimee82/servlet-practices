@@ -1,14 +1,11 @@
 package guestbook.vo;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 public class GuestbookVo {
     private Long no;
     private String name;
     private String password;
     private String contents;
-    private Date regDate;
+    private String regDate;
 
     public Long getNo() {
         return no;
@@ -42,11 +39,11 @@ public class GuestbookVo {
         this.contents = contents;
     }
 
-    public Date getRegDate() {
+    public String getRegDate() {
         return regDate;
     }
 
-    public void setRegDate(Date regDate) {
+    public void setRegDate(String regDate) {
         this.regDate = regDate;
     }
 }

@@ -26,16 +26,14 @@ public class GuestbookDao {
     public static List<GuestbookVo> findAll() {
         List<GuestbookVo> result = new ArrayList<>();
         try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement("select no, name, contents, reg_date from guestbook order by no");
+             PreparedStatement pstmt = conn.prepareStatement("select no, name, contents, DATE_FORMAT(reg_date, '%Y-%m-%d %H:%i') as formatted_reg_date from guestbook order by no");
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-
-
                 GuestbookVo vo = new GuestbookVo();
                 vo.setNo(rs.getLong(1));
                 vo.setName(rs.getString(2));
                 vo.setContents(rs.getString(3));
-                vo.setRegDate(rs.getTimestamp(4));
+                vo.setRegDate(rs.getString(4));
                 result.add(vo);
             }
         } catch (SQLException e) {
