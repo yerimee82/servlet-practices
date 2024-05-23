@@ -8,6 +8,7 @@
     <artifactId>servlet-practices</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <modules>
         <module>emaillist1</module>
         <module>emaillist2</module>
@@ -16,11 +17,6 @@
         <module>helloweb</module>
     </modules>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
     <build>
         <plugins>
             <plugin>
@@ -30,7 +26,6 @@
                 <configuration>
                     <url>${tomcat.deploy.url}</url>
                     <server>tomcat-poscodx</server>
-                    <path>/${project.build.finalName}</path>
                 </configuration>
             </plugin>
         </plugins>
