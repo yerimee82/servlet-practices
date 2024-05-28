@@ -20,4 +20,21 @@
         <servlet-name>_01Servle</servlet-name>
         <url-pattern>/01</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>_02Servle</servlet-name>
+        <servlet-class>jstlel._02Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>_02Servle</servlet-name>
+        <url-pattern>/02</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>_03Servle</servlet-name>
+        <servlet-class>jstlel._03Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>_03Servle</servlet-name>
+        <url-pattern>/03</url-pattern>
+    </servlet-mapping>
 </web-app>

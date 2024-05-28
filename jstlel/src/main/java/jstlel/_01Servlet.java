@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class _01Servlet extends HttpServlet {
     @Override
@@ -34,6 +36,14 @@ public class _01Servlet extends HttpServlet {
         req
                 .getRequestDispatcher("/WEB-INF/views/01.jsp")
                 .forward(req, resp);
+
+        // map
+        Map<String, Object> map = new HashMap<>();
+        map.put("ival", iVal);
+        map.put("fval", fVal);
+        map.put("sval", sVal);
+
+
     }
 
     @Override
