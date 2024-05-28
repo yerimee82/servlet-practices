@@ -12,11 +12,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class GuestbookServlet extends HttpServlet {
-
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         String action = req.getParameter("a");
-
         if ("deleteform".equals(action)) {
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/deleteform.jsp");
             rd.forward(req, resp);
@@ -32,7 +30,10 @@ public class GuestbookServlet extends HttpServlet {
 
                 if (!isDeleted) {
                     resp.setContentType("text/html; charset=UTF-8");
-                    resp.getWriter().print("<script>alert('비밀번호가 틀렸습니다.'); history.back();</script>");
+                    resp.getWriter().println("<script>");
+                    resp.getWriter().println("alert('비밀번호가 틀렸습니다.');");
+                    resp.getWriter().println("history.back();");
+                    resp.getWriter().println("</script>");
                     return;
                 }
                 resp.sendRedirect(req.getContextPath() + "/gb");
@@ -69,7 +70,6 @@ public class GuestbookServlet extends HttpServlet {
             doGet(req, resp);
         }
     }
-
     @Override
     public void destroy() {
     }
